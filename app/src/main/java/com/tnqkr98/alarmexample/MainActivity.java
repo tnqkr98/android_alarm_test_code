@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         // 알람 시간 최초 설정
         Calendar calendar = Calendar.getInstance();                 // 캘린더 객체 생성, 디폴트 초기값은 현재 시간
         calendar.setTimeInMillis(System.currentTimeMillis());       // 캘린더 객체에 현재 시점 입력0
-        calendar.set(Calendar.HOUR_OF_DAY,14);                      // 시간 지정
-        calendar.set(Calendar.MINUTE,21);                           // 분 지정
-        calendar.set(Calendar.SECOND,0);                            // 초 지정
+        calendar.set(Calendar.HOUR_OF_DAY,11);                      // 시간 지정
+        calendar.set(Calendar.MINUTE,49);                           // 분 지정
+        calendar.set(Calendar.SECOND,00);                            // 초 지정
 
         if(calendar.before(Calendar.getInstance())) {               // 현재시간이 지정된 시간보다 뒤인 경우
             calendar.add(Calendar.DATE, 1);                  // 지정된 시간에 1일 더한다

@@ -30,7 +30,7 @@ public class DeviceBootReceiver extends BroadcastReceiver {         // 이 리�
 
            Calendar current_calendar = Calendar.getInstance();          // 캘린더 객체 생성
            Calendar nextNotifyTime = new GregorianCalendar();           // 그레고리안 캘린더(현 위치 시스템 표준시에 맞춰진 캘린더 객체)
-           nextNotifyTime.setTimeInMillis(sharedPreferences.getLong("nextNotifyTime",millis));      // 캘린더 객체의 오늘 날짜에, 불러온 시간으로 알람 등록
+           nextNotifyTime.setTimeInMillis(millis);                      // 캘린더 객체 저장된 시간으로 알람 등록
 
            if(current_calendar.after(nextNotifyTime)){      // 알람시간이 이미 지났다면
                nextNotifyTime.add(Calendar.DATE,1);  // 다음날 같은 시간으로 알람 시간 변경
@@ -41,8 +41,6 @@ public class DeviceBootReceiver extends BroadcastReceiver {         // 이 리�
 
            if(manager != null)
                manager.setRepeating(AlarmManager.RTC_WAKEUP, nextNotifyTime.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);     // 알람등록
-
-
        }
     }
 }

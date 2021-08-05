@@ -31,9 +31,9 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"default");
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            builder.setSmallIcon(R.drawable.ic_launcher_foreground); // mipmap 불가 ( Oreo 이상 시스템에선 )
+            builder.setSmallIcon(R.drawable.ic_launcher_foreground); // mipmap 불가 ( Oreo 이상 시스템에선 ) -> 되는듯 다시
 
-            NotificationChannel channel = new NotificationChannel("default","매일 알람",NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel = new NotificationChannel("default","매일 알람",NotificationManager.IMPORTANCE_HIGH);       // 이게 Oreo 이상에서 필수. 채널 생성 및 구독
             channel.setDescription("매일 정해진 알람");
 
             if(notificationManager != null)
