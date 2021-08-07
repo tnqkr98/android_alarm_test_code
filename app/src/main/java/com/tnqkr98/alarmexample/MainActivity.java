@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         Intent alarmIntent = new Intent(this, AlarmReceiver.class);                                     // AlarmReceiver
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,alarmIntent,0);       // AlarmReceiver를 실행하는 팬딩인텐트(지금 앱이 아닌, 다른 프로세스에서 수행할때 사용)
 
-
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         if(dailyNotify){    // 알람 허용했다면
